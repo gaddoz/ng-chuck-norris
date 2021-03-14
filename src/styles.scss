@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import './../node_modules/@clr/icons/clr-icons.min.css';
-@import './../node_modules/@clr/ui/clr-ui.min.css';
 
+@import './../node_modules/@clr/ui/clr-ui.min.css';
+// @import './styles/clarity.theme.scss';
+// @import './../node_modules/@clr/ui/src/main.scss';
 
 
 .sidenav .nav-group .nav-list, .sidenav .nav-group label {
@@ -13,4 +15,8 @@
 .sidenav .nav-group .nav-list .nav-link {
     line-height: 1rem;
     padding: 0.5rem;
+}
+
+.main-container .content-container .clr-vertical-nav.toolbarnav {
+    order: 2;
 }

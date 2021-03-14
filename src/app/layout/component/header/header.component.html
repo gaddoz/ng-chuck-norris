@@ -1,21 +1,12 @@
-<header class="header header-6">
-    <div class="branding">
-        <a href="javascript:void(0)">
-            <span class="title">ng-chuck-norris</span>
-        </a>
+<ng-container>
+    <div class='header header-4'>
+        <div class="branding">
+            <a href="javascript:void(0)" class="nav-menu-title">
+                <span class="title">ng-chuck-norris</span>
+            </a>
+        </div>
+        <div class="header-nav">
+
+        </div>
     </div>
-    <div class="header-nav">
-        <a href="javascript://" class="nav-link nav-icon" [ngClass]="{active:false}">
-            <clr-icon shape="cloud"></clr-icon>
-        </a>
-        <a href="javascript://" class="nav-link nav-icon" [ngClass]="{active:false}">
-            <clr-icon shape="folder"></clr-icon>
-        </a>
-    </div>
-</header>
-<nav class="subnav" aria-label="subnav menu">
-    <ul class="nav">
-        <li><a class="nav-link" [routerLink]="['/']">home</a></li>
-        <li><a class="nav-link" [routerLink]="['/main/chuck-norris']">chuck</a></li>
-    </ul>
-</nav>
+</ng-container>

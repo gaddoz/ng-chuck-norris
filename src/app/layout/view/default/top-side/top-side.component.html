@@ -1,9 +1,19 @@
-<div class="main-container">
-    <app-header></app-header>
+<clr-main-container>
+    <clr-header class="header-4">
+        <app-header></app-header>
+    </clr-header>
+    <nav class="subnav">
+        <app-header-subnav></app-header-subnav>
+    </nav>
     <div class="content-container">
-        <app-sidebar></app-sidebar>
-        <div class="content-area">
+        <main class="content-area">
             <router-outlet *ngIf="true"></router-outlet>
-        </div>
+        </main>
+        <clr-vertical-nav class="sidenav" [clr-nav-level]="1" [clrVerticalNavCollapsible]="true">
+            <app-sidebar></app-sidebar>
+        </clr-vertical-nav>
+        <clr-vertical-nav class='sidenav toolbarnav' [clr-nav-level]="2" [clrVerticalNavCollapsible]="true">
+            <app-toolbar-nav></app-toolbar-nav>
+        </clr-vertical-nav>
     </div>
-</div>
+</clr-main-container>
