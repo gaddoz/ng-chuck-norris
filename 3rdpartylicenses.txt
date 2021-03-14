@@ -25,9 +25,6 @@ MIT
 @clr/icons
 MIT
 
-@clr/ui
-MIT
-
 lit-element
 BSD-3-Clause
 BSD 3-Clause License
