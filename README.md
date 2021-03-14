@@ -1,5 +1,6 @@
-# NgChucknorris
+# Ng-Chuck-Norris
 
+Angular 11, RxJs 6.6, Clarity 5 starter play-ground project with core, layout and lazy modules.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
 ## Development server
