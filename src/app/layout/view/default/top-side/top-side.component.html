@@ -9,10 +9,18 @@
         <main class="content-area">
             <router-outlet *ngIf="true"></router-outlet>
         </main>
-        <clr-vertical-nav class="sidenav" [clr-nav-level]="1" [clrVerticalNavCollapsible]="true">
+        <clr-vertical-nav
+            class='sidenav'
+            [clr-nav-level]="1"
+            [clrVerticalNavCollapsible]="sidebarNavCollapsible"
+            *ngIf="sidebarNavEnabled">
             <app-sidebar></app-sidebar>
         </clr-vertical-nav>
-        <clr-vertical-nav class='sidenav toolbarnav' [clr-nav-level]="2" [clrVerticalNavCollapsible]="true">
+        <clr-vertical-nav
+            class='sidenav toolbarnav'
+            [clr-nav-level]="2"
+            [clrVerticalNavCollapsible]="toolbarNavCollapsible"
+            *ngIf="toolbarNavEnabled">
             <app-toolbar-nav></app-toolbar-nav>
         </clr-vertical-nav>
     </div>

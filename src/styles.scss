@@ -7,16 +7,22 @@
 // @import './../node_modules/@clr/ui/src/main.scss';
 
 
-.sidenav .nav-group .nav-list, .sidenav .nav-group label {
-    padding: 0;
-    padding-left: 1rem;
-}
+// .sidenav .nav-group .nav-list, .sidenav .nav-group label {
+//     padding: 0;
+//     padding-left: 1rem;
+// }
 
-.sidenav .nav-group .nav-list .nav-link {
-    line-height: 1rem;
-    padding: 0.5rem;
-}
+// .sidenav .nav-group .nav-list .nav-link {
+//     line-height: 1rem;
+//     padding: 0.5rem;
+// }
 
 .main-container .content-container .clr-vertical-nav.toolbarnav {
     order: 2;
+}
+
+
+.header clr-dropdown .dropdown-menu clr-icon {
+    fill: #999;
+    margin-right: 0.2rem;
 }

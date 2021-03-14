@@ -1,11 +1,14 @@
 <ng-container>
-    <section class="sidenav-content">
-        <section class="nav-group">
-            <ul class="nav-list">
-                <li>
-                    <clr-icon shape="cog"></clr-icon><span>item menu</span>
-                </li>
-            </ul>
-        </section>
-    </section>
+    <a clrVerticalNavLink routerLink="['/']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="home"></clr-icon>
+        Home
+    </a>
+    <a clrVerticalNavLink routerLink="['/']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
+        User
+    </a>
+    <a clrVerticalNavLink routerLink="['/']" routerLinkActive="active">
+        <clr-icon clrVerticalNavIcon shape="search"></clr-icon>
+        Search
+    </a>
 </ng-container>
