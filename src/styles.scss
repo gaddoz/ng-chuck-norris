@@ -2,25 +2,11 @@
 
 @import './../node_modules/@clr/icons/clr-icons.min.css';
 
-@import './../node_modules/@clr/ui/clr-ui.min.css';
-// @import './styles/clarity.theme.scss';
-// @import './../node_modules/@clr/ui/src/main.scss';
-
-
-// .sidenav .nav-group .nav-list, .sidenav .nav-group label {
-//     padding: 0;
-//     padding-left: 1rem;
-// }
-
-// .sidenav .nav-group .nav-list .nav-link {
-//     line-height: 1rem;
-//     padding: 0.5rem;
-// }
+@import './styles/clarity.theme.scss';
 
 .main-container .content-container .clr-vertical-nav.toolbarnav {
     order: 2;
 }
-
 
 .header clr-dropdown .dropdown-menu clr-icon {
     fill: #999;

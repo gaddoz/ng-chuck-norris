@@ -17,7 +17,10 @@
 
 // Component variables
 @import './../../node_modules/@clr/ui/src/utils/variables.clarity';
-@import './clarity.variables.override';
+
+// Custom Local Variables Override
+@import './global.variables';
+@import './clarity.theme.overwrites';
 
 //Reboot
 @import './../../node_modules/@clr/ui/src/utils/reboot.clarity'; // depends on variables.clarity, mixins.clarity, color.clarity, helpers.clarity
