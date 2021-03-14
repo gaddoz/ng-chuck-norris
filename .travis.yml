@@ -20,11 +20,6 @@ jobs:
       script:
         - yarn run build:prod
       deploy:
-        - provider: pages
-          token: $GH_TOKEN
-          local_dir: dist
-          verbose: true
-          edge: true
         - provider: script
           token: $GH_TOKEN
           skip_cleanup: true
