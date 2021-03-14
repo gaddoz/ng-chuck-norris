@@ -1,1 +1,25 @@
-{{ randomJoke }}
+<div class="card">
+    <div class="card-header">
+        random joke
+    </div>
+    <div class="card-block">
+        <div class="card-title">
+            ng-chuck-norris
+        </div>
+        <div class="card-text">
+            {{ randomJoke }}
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-sm btn-link" (click)="refModal.openModal()">Open Modal Form 1</button>
+    </div>
+</div>
+
+<app-shared-modal
+    title="I have a nice title"
+    [showCancelButton]='true'
+    [showOkButton]='true'
+    #refModal
+>
+<p>But not much to say...</p>
+</app-shared-modal>
