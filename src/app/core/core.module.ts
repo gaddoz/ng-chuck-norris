@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../layout/layout.module';
 import { IconsService } from './service/icons.service';
 import { CoreRoutingModule } from './routing/core-routing.module';
+import { ApiChuckNorrisService } from './service/chuck-norris.service';
 
 const initIcon = (icon: IconsService) => (): void => icon.load();
 
@@ -25,6 +26,7 @@ const initIcon = (icon: IconsService) => (): void => icon.load();
   ],
   providers: [
     IconsService,
+    ApiChuckNorrisService,
     {
       provide: APP_INITIALIZER,
       useFactory: initIcon,
