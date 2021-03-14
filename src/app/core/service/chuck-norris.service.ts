@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiChuckNorrisService {
   constructor(protected http: HttpClient) {}
 
-    getRandomJoke() {
-        return this.http.get('https://api.chucknorris.io/jokes/random');
+    getRandomJoke(): Observable<any> {
+      const url = 'https://api.chucknorris.io/jokes/random';
+      return this.http.get(url);
     }
 }
 

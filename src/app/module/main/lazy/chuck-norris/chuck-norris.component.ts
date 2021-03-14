@@ -6,11 +6,11 @@ import { ApiChuckNorrisService } from 'src/app/core/service/chuck-norris.service
   templateUrl: './chuck-norris.component.html',
 })
 export class ChuckNorrisComponent implements OnInit {
-  randomJoke:string='';
+  randomJoke = '';
 
   constructor(apiChuckService: ApiChuckNorrisService) {
     apiChuckService.getRandomJoke().subscribe((res: any) => {
-      console.log("🚀 ~ file: chuck-norris.component.ts ~ line 11 ~ ChuckNorrisComponent ~ x ~ res", res);
+      console.log('🚀 ~ file: chuck-norris.component.ts ~ line 11 ~ ChuckNorrisComponent ~ x ~ res', res);
       this.randomJoke = res.value;
     });
   }
