@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JokesCategory } from '../model/api/chuck-norris/jokesCategory';
 import { Joke } from '../model/api/chuck-norris/joke';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ApiChuckNorrisService {
@@ -15,7 +16,9 @@ export class ApiChuckNorrisService {
 
   getJokesCategories(): Observable<JokesCategory[]> {
     const url = 'https://api.chucknorris.io/jokes/categories';
-    return this.http.get<JokesCategory[]>(url);
+    return this.http
+      .get<string[]>(url)
+      .pipe(map((res) => res.map((cat) => ({ name: cat, jokes: [] }))));
   }
 
   getRandomJokeByCategory(category: string): Observable<string[]> {
