@@ -1,0 +1,20 @@
+//Designer palette
+$warning: #ee9629;
+$warning-disabled: #fae0bf;
+$error: #e60000;
+$error-background: #fff1f1;
+
+:root {
+  --clr-global-borderradius: 0;
+  --clr-color-action-50: #{lighten($primary-color,30%)};
+  --clr-color-action-100: #{lighten($primary-color,25%)};
+  --clr-color-action-200: #{lighten($primary-color,20%)};
+  --clr-color-action-300: #{lighten($primary-color,15%)};
+  --clr-color-action-400: #{lighten($primary-color,10%)};
+  --clr-color-action-500: #{lighten($primary-color,5%)};
+  --clr-color-action-600: #{$primary-color};
+  --clr-color-action-700: #{darken($primary-color,5%)};
+  --clr-color-action-800: #{darken($primary-color,10%)};
+  --clr-color-action-900: #{darken($primary-color,20%)};
+  --clr-color-action-1000: #{darken($primary-color,25%)};
+}

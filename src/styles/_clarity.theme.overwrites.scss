@@ -8,10 +8,8 @@
 // /* Overwrites not copied from from @clr/ui/src/utils/_overwrites.clarity.scss     */
 // /*================================================================================*/
 
-
-
+@import './variables';
 $clr-header-4-bg-color: $primary-color;
-
 
 // /*================================================================================*/
 // /* Overwrite the default variable assignments in _layers.clarity.scss here:       */
