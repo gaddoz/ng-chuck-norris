@@ -23,11 +23,9 @@ export class ChuckNorrisComponent implements OnInit {
     return this.apiChuckService.getJokesCategories().pipe(
       mergeMap(categories => {
         const jokesSearch = categories.map(cat =>
-          this.apiChuckService.getJokesByCategory(cat.name).pipe(
-            map(jokes => {
-              return { name: cat.name, jokes: jokes };
-            }),
-          ),
+          this.apiChuckService
+            .getJokesByCategory(cat.name)
+            .pipe(map(jokes => ({ name: cat.name, jokes }))),
         );
         return forkJoin(jokesSearch);
       }),
