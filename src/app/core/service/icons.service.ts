@@ -3,10 +3,10 @@ import { ClarityIcons } from '@clr/icons';
 import { IconShapeSources } from '@clr/icons/interfaces/icon-interfaces';
 @Injectable()
 export class IconsService {
-  constructor() {}
-
   icons: IconShapeSources = {
   };
+
+  constructor() {}
 
   public load(): void {
     ClarityIcons.add(this.icons);
