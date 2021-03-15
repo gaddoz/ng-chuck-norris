@@ -6,7 +6,9 @@ export class LoadingSpinnerRegisterService {
 
   registerBar(newBar: ElementRef<LoadingSpinnerComponent>): void {
     this.existingBars.forEach((bar) => {
-      bar.nativeElement.hide();
+      const el = bar.nativeElement as unknown as HTMLElement;
+      el['style']['display'] = 'none';
+      console.log('we register and hide bar',bar);
     });
     this.existingBars.push(newBar);
   }
@@ -14,7 +16,9 @@ export class LoadingSpinnerRegisterService {
   unregisterBar(bar: ElementRef<LoadingSpinnerComponent>): void {
     this.existingBars.splice(this.existingBars.indexOf(bar), 1);
     if (this.existingBars.length) {
-      this.existingBars[this.existingBars.length - 1].nativeElement.show();
+      const lastEl = this.existingBars[this.existingBars.length - 1].nativeElement as unknown as HTMLElement;
+      lastEl['style']['display'] = 'inherit';
+      console.log('we unregisterBar and show last bar',this.existingBars);
     }
   }
 }

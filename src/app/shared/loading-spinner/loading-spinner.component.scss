@@ -9,14 +9,18 @@
         position: relative;
         top: 0;
     }
+    > .m-top-neg-1 {
+        top: -1rem;
+    }
 }
 
-.progress.loop > progress {
+.progress.loop.compact > progress {
     height: .1rem;
 }
 
 .custom-spinner {
     max-width: 2rem;
+
     svg {
         animation: 2s linear infinite svg-animation;
         max-width: 100px;
