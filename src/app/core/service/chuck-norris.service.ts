@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { JokesCategory } from '../model/api/chuck-norris/jokesCategory';
 import { Joke } from '../model/api/chuck-norris/joke';
 
 @Injectable()
@@ -12,9 +13,9 @@ export class ApiChuckNorrisService {
     return this.http.get<Joke>(url);
   }
 
-  getJokesCategories(): Observable<string[]> {
+  getJokesCategories(): Observable<JokesCategory[]> {
     const url = 'https://api.chucknorris.io/jokes/categories';
-    return this.http.get<string[]>(url);
+    return this.http.get<JokesCategory[]>(url);
   }
 
   getRandomJokeByCategory(category: string): Observable<string[]> {
@@ -22,8 +23,8 @@ export class ApiChuckNorrisService {
     return this.http.get<string[]>(url);
   }
 
-  getJokesBySearch(category: string): Observable<Joke[]> {
-    const url = `https://api.chucknorris.io/jokes/search?query={query}`;
+  getJokesBySearch(query: string): Observable<Joke[]> {
+    const url = `https://api.chucknorris.io/jokes/search?query=${query}`;
     return this.http.get<Joke[]>(url);
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
+import { mergeMap, map } from 'rxjs/operators';
+import { JokesCategory } from 'src/app/core/model/api/chuck-norris/jokesCategory';
 import { Joke } from 'src/app/core/model/api/chuck-norris/joke';
 import { ApiChuckNorrisService } from 'src/app/core/service/chuck-norris.service';
 
@@ -9,23 +11,46 @@ import { ApiChuckNorrisService } from 'src/app/core/service/chuck-norris.service
 })
 export class ChuckNorrisComponent implements OnInit {
   randomJoke: Joke | undefined = undefined;
-  jokeCategories: string[] = [];
+  jokeCategories: JokesCategory[] = [];
 
-  constructor(apiChuckService: ApiChuckNorrisService) {
+  constructor(private apiChuckService: ApiChuckNorrisService) {
+
+  }
+
+  ngOnInit(): void {
+    this.loadAllForkJoin();
+  }
+
+  getItemsForEachCat(): Observable<JokesCategory[]> {
+    return this.apiChuckService.getJokesCategories().pipe(
+      mergeMap(categories => {
+        const jokesSearch = categories.map(cat => this.apiChuckService.getJokesByCategory(cat.name).pipe(
+          map(jokes => {
+            return {name:cat.name,jokes:jokes};
+          })
+        ));
+        return forkJoin(jokesSearch);
+      })
+    );
+  }
+
+  refreshRandomJoke(): void {
+    this.loadAllForkJoin();
+  }
+
+  loadAllForkJoin(): void {
     forkJoin({
-      randomJoke: apiChuckService.getRandomJoke(),
-      jokeCategories: apiChuckService.getJokesCategories(),
+      randomJoke: this.apiChuckService.getRandomJoke(),
+      jokeCategories: this.apiChuckService.getJokesCategories(),
+      jokesCategories: this.getItemsForEachCat(),
     }).subscribe({
       next: res => {
-        console.log(
-          '🚀 ~ file: chuck-norris.component.ts ~ line 19 ~ ChuckNorrisComponent ~ }).subscribe ~ res',
-          res,
-        );
-        this.jokeCategories = res.jokeCategories;
+        console.log("🚀 ~ file: chuck-norris.component.ts ~ line 54 ~ refreshRandomJoke ~ res", res)
+        this.jokeCategories = res.jokesCategories;
         this.randomJoke = res.randomJoke;
       },
     });
   }
 
-  ngOnInit(): void {}
+
 }
