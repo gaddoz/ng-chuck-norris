@@ -13,9 +13,7 @@ export class ChuckNorrisComponent implements OnInit {
   randomJoke: Joke | undefined = undefined;
   jokeCategories: JokesCategory[] = [];
 
-  constructor(private apiChuckService: ApiChuckNorrisService) {
-
-  }
+  constructor(private apiChuckService: ApiChuckNorrisService) {}
 
   ngOnInit(): void {
     this.loadAllForkJoin();
@@ -24,13 +22,15 @@ export class ChuckNorrisComponent implements OnInit {
   getItemsForEachCat(): Observable<JokesCategory[]> {
     return this.apiChuckService.getJokesCategories().pipe(
       mergeMap(categories => {
-        const jokesSearch = categories.map(cat => this.apiChuckService.getJokesByCategory(cat.name).pipe(
-          map(jokes => {
-            return {name:cat.name,jokes:jokes};
-          })
-        ));
+        const jokesSearch = categories.map(cat =>
+          this.apiChuckService.getJokesByCategory(cat.name).pipe(
+            map(jokes => {
+              return { name: cat.name, jokes: jokes };
+            }),
+          ),
+        );
         return forkJoin(jokesSearch);
-      })
+      }),
     );
   }
 
@@ -45,12 +45,13 @@ export class ChuckNorrisComponent implements OnInit {
       jokesCategories: this.getItemsForEachCat(),
     }).subscribe({
       next: res => {
-        console.log("🚀 ~ file: chuck-norris.component.ts ~ line 54 ~ refreshRandomJoke ~ res", res)
+        console.log(
+          '🚀 ~ file: chuck-norris.component.ts ~ line 54 ~ refreshRandomJoke ~ res',
+          res,
+        );
         this.jokeCategories = res.jokesCategories;
         this.randomJoke = res.randomJoke;
       },
     });
   }
-
-
 }

@@ -1,4 +1,4 @@
-import { Joke } from "./joke";
+import { Joke } from './joke';
 
 export interface JokesCategory {
   name: string;

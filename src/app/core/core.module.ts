@@ -36,10 +36,7 @@ const initIcon = (icon: IconsService) => (): void => icon.load();
     },
     LoaderService,
     LoadingSpinnerRegisterService,
-     { provide: HTTP_INTERCEPTORS,
-       useClass: LoaderInterceptor,
-       multi: true
-     }
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
 })
 export class CoreModule {

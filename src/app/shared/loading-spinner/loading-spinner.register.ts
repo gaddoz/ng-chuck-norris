@@ -1,5 +1,5 @@
-import { ElementRef, Injectable } from "@angular/core";
-import { LoadingSpinnerComponent } from "./loading-spinner.component";
+import { ElementRef, Injectable } from '@angular/core';
+import { LoadingSpinnerComponent } from './loading-spinner.component';
 
 @Injectable()
 export class LoadingSpinnerRegisterService {
@@ -10,7 +10,7 @@ export class LoadingSpinnerRegisterService {
    * @param newBar: the component to register
    */
   registerBar(newBar: ElementRef<LoadingSpinnerComponent>): void {
-    this.existingBars.forEach(bar => {
+    this.existingBars.forEach((bar) => {
       bar.nativeElement.hide();
     });
     this.existingBars.push(newBar);

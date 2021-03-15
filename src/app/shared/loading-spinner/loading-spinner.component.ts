@@ -9,14 +9,15 @@ import { LoadingSpinnerDisplayMode } from './loading-spinner.mode.enum';
   styleUrls: ['./loading-spinner.component.scss'],
 })
 export class LoadingSpinnerComponent implements OnInit, OnDestroy {
-  @Input() mode : LoadingSpinnerDisplayMode = LoadingSpinnerDisplayMode.Svg;
+  @Input() mode: LoadingSpinnerDisplayMode = LoadingSpinnerDisplayMode.Svg;
   show = true;
   modeEnum = LoadingSpinnerDisplayMode;
 
-  constructor(public loaderService: LoaderService,
+  constructor(
+    public loaderService: LoaderService,
     private register: LoadingSpinnerRegisterService,
-    private readonly self: ElementRef<LoadingSpinnerComponent>) {
-  }
+    private readonly self: ElementRef<LoadingSpinnerComponent>
+  ) {}
 
   hide(): void {
     this.show = false;
