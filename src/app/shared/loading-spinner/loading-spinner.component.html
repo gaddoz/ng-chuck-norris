@@ -1,4 +1,7 @@
-<div *ngIf="(enabled && (loaderService.isLoading | async))" [ngClass]="{'m-top-neg-1':mode==='svg-negative-top'}">
+<div
+  *ngIf="enabled && (loaderService.isLoading | async)"
+  [ngClass]="{ 'm-top-neg-1': mode === 'svg-negative-top' }"
+>
   <div *ngIf="mode === 'compact-progress'">
     <div class="progress loop compact">
       <progress></progress>
@@ -6,13 +9,16 @@
   </div>
   <div *ngIf="mode === 'progress'">
     <div class="progress loop">
-        <progress></progress>
+      <progress></progress>
     </div>
   </div>
   <div *ngIf="mode === 'spinner'">
     <clr-spinner></clr-spinner>
   </div>
-  <div *ngIf="mode === 'svg' || mode === 'svg-negative-top'" class="custom-spinner m-top-neg-1">
+  <div
+    *ngIf="mode === 'svg' || mode === 'svg-negative-top'"
+    class="custom-spinner m-top-neg-1"
+  >
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="45" />
     </svg>

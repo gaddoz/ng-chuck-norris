@@ -7,8 +7,13 @@ import { LoadingSpinnerRegisterService } from 'src/app/shared/loading-spinner/lo
   styleUrls: ['./loading-spinner.component.scss'],
 })
 export class LoadingSpinnerComponent implements OnInit, OnDestroy {
-  @Input() mode: 'svg' | 'svg-negative-top' | 'progress' | 'compact-progress' | 'spinner' = 'svg-negative-top';
-  @Input() singleRegistrySkip: boolean = false;
+  @Input() mode:
+    | 'svg'
+    | 'svg-negative-top'
+    | 'progress'
+    | 'compact-progress'
+    | 'spinner' = 'svg-negative-top';
+  @Input() singleRegistrySkip = false;
   enabled = true;
 
   constructor(
@@ -26,16 +31,22 @@ export class LoadingSpinnerComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(!this.singleRegistrySkip){
+    if (!this.singleRegistrySkip) {
       this.register.unregisterBar(this.self);
-      console.log("🚀 ~ file: loading-spinner.component.ts ~ line 31 ~ LoadingSpinnerComponent ~ ngOnDestroy ~ this.self", this.self)
+      console.log(
+        '🚀 ~ file: loading-spinner.component.ts ~ line 31 ~ LoadingSpinnerComponent ~ ngOnDestroy ~ this.self',
+        this.self
+      );
     }
   }
 
   ngOnInit(): void {
-    if(!this.singleRegistrySkip){
+    if (!this.singleRegistrySkip) {
       this.register.registerBar(this.self);
-      console.log("🚀 ~ file: loading-spinner.component.ts ~ line 38 ~ LoadingSpinnerComponent ~ ngOnInit ~ this.self", this.self)
+      console.log(
+        '🚀 ~ file: loading-spinner.component.ts ~ line 38 ~ LoadingSpinnerComponent ~ ngOnInit ~ this.self',
+        this.self
+      );
     }
   }
 }
