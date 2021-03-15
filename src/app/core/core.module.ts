@@ -1,10 +1,13 @@
 import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../layout/layout.module';
 import { IconsService } from './service/icons.service';
 import { CoreRoutingModule } from './routing/core-routing.module';
 import { ApiChuckNorrisService } from './service/chuck-norris.service';
+import { LoaderService } from './service/loader.service';
+import { LoaderInterceptor } from './service/interceptor/loader.interceptor';
+import { LoadingSpinnerRegisterService } from '../shared/loading-spinner/loading-spinner.register';
 
 const initIcon = (icon: IconsService) => (): void => icon.load();
 
@@ -31,6 +34,12 @@ const initIcon = (icon: IconsService) => (): void => icon.load();
       deps: [IconsService],
       multi: true,
     },
+    LoaderService,
+    LoadingSpinnerRegisterService,
+     { provide: HTTP_INTERCEPTORS,
+       useClass: LoaderInterceptor,
+       multi: true
+     }
   ],
 })
 export class CoreModule {
