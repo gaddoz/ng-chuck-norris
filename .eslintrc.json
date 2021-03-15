@@ -8,6 +8,11 @@
       "files": [
         "*.ts"
       ],
+      "plugins": [
+        "prettier",
+        "@typescript-eslint",
+        "rxjs"
+      ],
       "parserOptions": {
         "project": [
           "tsconfig.json",
