@@ -1,18 +1,24 @@
-<clr-modal [clrModalOpen]="open" [clrModalClosable]='false'>
-    <h3 class="modal-title">{{ title }}</h3>
-    <div class="modal-body">
-        <ng-content></ng-content>
-    </div>
-    <div class="modal-footer" *ngIf="showCancelButton || showOkButton">
-        <button
-            type="button"
-            class="btn btn-outline"
-            *ngIf="showCancelButton"
-            (click)="closeModal()">Cancel</button>
-        <button
-            type="button"
-            class="btn btn-primary"
-            *ngIf="showOkButton"
-            (click)="closeModal()">Ok</button>
-    </div>
+<clr-modal [clrModalOpen]="open" [clrModalClosable]="false">
+  <h3 class="modal-title">{{ title }}</h3>
+  <div class="modal-body">
+    <ng-content></ng-content>
+  </div>
+  <div class="modal-footer" *ngIf="showCancelButton || showOkButton">
+    <button
+      type="button"
+      class="btn btn-outline"
+      *ngIf="showCancelButton"
+      (click)="closeModal()"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      *ngIf="showOkButton"
+      (click)="closeModal()"
+    >
+      Ok
+    </button>
+  </div>
 </clr-modal>

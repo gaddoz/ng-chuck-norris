@@ -6,9 +6,7 @@ import { ClarityModule } from '@clr/angular';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [
-    ChuckNorrisComponent,
-  ],
+  declarations: [ChuckNorrisComponent],
   imports: [
     CommonModule,
     ChuckNorrisRoutingModule,

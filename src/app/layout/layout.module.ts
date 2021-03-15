@@ -9,9 +9,15 @@ import { ToolbarNavComponent } from './component/toolbar-nav/toolbar-nav.compone
 import { LayoutTopSideComponent } from './view/default/top-side/top-side.component';
 
 @NgModule({
-  declarations: [LayoutTopSideComponent, SidebarComponent, HeaderSubNavComponent, HeaderComponent, ToolbarNavComponent ],
-  imports: [ CommonModule, RouterModule, ClarityModule ],
-  exports: [ LayoutTopSideComponent ],
+  declarations: [
+    LayoutTopSideComponent,
+    SidebarComponent,
+    HeaderSubNavComponent,
+    HeaderComponent,
+    ToolbarNavComponent,
+  ],
+  imports: [CommonModule, RouterModule, ClarityModule],
+  exports: [LayoutTopSideComponent],
   providers: [],
 })
 export class LayoutModule {}

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-header-subnav',
-    templateUrl: './header-subnav.component.html'
+  selector: 'app-header-subnav',
+  templateUrl: './header-subnav.component.html',
 })
-export class HeaderSubNavComponent {
-
-}
+export class HeaderSubNavComponent {}

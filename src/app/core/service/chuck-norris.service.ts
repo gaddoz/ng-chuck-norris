@@ -30,7 +30,4 @@ export class ApiChuckNorrisService {
   getJokesByCategory(category: string): Observable<Joke[]> {
     return this.getJokesBySearch(category);
   }
-
 }
-
-

@@ -1,7 +1,5 @@
 import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
-import {
-  HttpClientModule,
-} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from '../layout/layout.module';
 import { IconsService } from './service/icons.service';
@@ -33,7 +31,7 @@ const initIcon = (icon: IconsService) => (): void => icon.load();
       deps: [IconsService],
       multi: true,
     },
-  ]
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

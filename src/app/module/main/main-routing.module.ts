@@ -17,7 +17,7 @@ const routes: Routes = [
         loadChildren: (): Promise<unknown> =>
           import(
             'src/app/module/main/lazy/chuck-norris/chuck-norris.module'
-          ).then(m => m.ChuckNorrisModule),
+          ).then((m) => m.ChuckNorrisModule),
       },
     ],
   },

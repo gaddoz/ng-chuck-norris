@@ -1,42 +1,45 @@
 <div class="card">
-    <div class="card-header">
-        home
+  <div class="card-header">home</div>
+  <div class="card-block">
+    <div class="card-title">ng-chuck-norris</div>
+    <div class="card-text">
+      <p>angular 11, rxjs 6, clarity, travis, github pages playground.</p>
     </div>
-    <div class="card-block">
-        <div class="card-title">
-            ng-chuck-norris
-        </div>
-        <div class="card-text">
-            <p>angular 11, rxjs 6, clarity, travis, github pages playground.</p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <button class="btn btn-sm btn-link" (click)="refModalOne.openModal()">Open Modal One</button>
-        <button class="btn btn-sm btn-link" (click)="refModalTwo.openModal()">Open Modal Two</button>
-    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-sm btn-link" (click)="refModalOne.openModal()">
+      Open Modal One
+    </button>
+    <button class="btn btn-sm btn-link" (click)="refModalTwo.openModal()">
+      Open Modal Two
+    </button>
+  </div>
 </div>
 
 <app-shared-modal
-    title="Modal One"
-    [showCancelButton]='false'
-    [showOkButton]='false'
-    #refModalOne>
-    <div class="body">
-        <p>body and the buttons outside app-shared-modal</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-outline" (click)="refModalOne.closeModal()">Cancel</button>
-        <button class="btn btn-primary" (click)="refModalOne.closeModal()">Ok</button>
-    </div>
+  title="Modal One"
+  [showCancelButton]="false"
+  [showOkButton]="false"
+  #refModalOne
+>
+  <div class="body">
+    <p>body and the buttons outside app-shared-modal</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-outline" (click)="refModalOne.closeModal()">
+      Cancel
+    </button>
+    <button class="btn btn-primary" (click)="refModalOne.closeModal()">
+      Ok
+    </button>
+  </div>
 </app-shared-modal>
 
 <app-shared-modal
-    title="Modal Two"
-    [showCancelButton]='true'
-    [showOkButton]='true'
-    #refModalTwo>
-    <p>only the body, buttons from the app-shared-modal</p>
+  title="Modal Two"
+  [showCancelButton]="true"
+  [showOkButton]="true"
+  #refModalTwo
+>
+  <p>only the body, buttons from the app-shared-modal</p>
 </app-shared-modal>
-
-
-

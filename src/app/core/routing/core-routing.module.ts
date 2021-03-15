@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: (): Promise<unknown> =>
-      import('src/app/module/main/main.module').then(m => m.MainModule),
+      import('src/app/module/main/main.module').then((m) => m.MainModule),
   },
   { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: '**', redirectTo: 'main' },

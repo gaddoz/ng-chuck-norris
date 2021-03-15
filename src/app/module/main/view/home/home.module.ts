@@ -5,11 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-    declarations: [HomeComponent],
-    imports: [
-        CommonModule,
-        ClarityModule,
-        SharedModule,
-    ],
+  declarations: [HomeComponent],
+  imports: [CommonModule, ClarityModule, SharedModule],
 })
-export class HomeModule { }
+export class HomeModule {}
