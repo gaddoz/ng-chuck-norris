@@ -1,3 +1,5 @@
 @import "./../../node_modules/@clr/ui/src/utils/mixins";
-@import './clarity.theme.overwrites';
+@import "./clarity.theme.overwrites";
 @import "./../../node_modules/@clr/ui/src/utils/components.clarity";
+@import "./clarity.theme.header";
+@import "./clarity.overflow.menu.tweaks";
