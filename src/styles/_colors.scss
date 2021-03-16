@@ -1,11 +1,12 @@
 //Designer palette
+$white: #fff;
 $warning: #ee9629;
 $warning-disabled: #fae0bf;
 $error: #e60000;
 $error-background: #fff1f1;
 
 :root {
-  --clr-global-borderradius: 0;
+  // --clr-color-action
   --clr-color-action-50: #{lighten($primary-color,30%)};
   --clr-color-action-100: #{lighten($primary-color,25%)};
   --clr-color-action-200: #{lighten($primary-color,20%)};
@@ -17,4 +18,13 @@ $error-background: #fff1f1;
   --clr-color-action-800: #{darken($primary-color,10%)};
   --clr-color-action-900: #{darken($primary-color,20%)};
   --clr-color-action-1000: #{darken($primary-color,25%)};
+  // --clr-global
+  --clr-global-borderradius: 0;
+  --clr-global-hover-color: var(--clr-color-action-200);
+  --clr-global-selection-color: var(--clr-color-action-100);
+  // --clr-dropdown
+  --clr-dropdown-selection-color: var(--clr-color-action-100);
+  --clr-dropdown-active-text-color: $white;
+  --clr-dropdown-bg-hover-color: var(--clr-color-action-200);
+
 }
