@@ -1,0 +1,727 @@
+openapi: "3.0.0"
+info:
+  description: "json-placeholder api"
+  version: "1.0.0"
+  title: "JSON-PLACEHOLDER"
+
+servers:
+  - url: https://jsonplaceholder.typicode.com/
+tags:
+  - name: Comments
+  - name: Posts
+  - name: Users
+
+paths:
+  '/comments':
+    post:
+      tags:
+        - "Comments"
+      summary: "Comments post"
+      description: "Comments post"
+      operationId: newComment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Comment"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comment"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    get:
+      tags:
+        - "Comments"
+      summary: "Comments get"
+      description: "Comments get"
+      operationId: listComments
+      parameters:
+          - name: _page
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _limit
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+  '/comments/{commentId}':
+    put:
+      tags:
+        - "Comments"
+      summary: "Comment put"
+      description: "Comment put"
+      operationId: putComment
+      parameters:
+          - name: commentId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comment"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    patch:
+      tags:
+        - "Comments"
+      summary: "Comment patch"
+      description: "Comment patch"
+      operationId: patchComment
+      parameters:
+          - name: commentId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Comment"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    get:
+      tags:
+        - "Comments"
+      summary: "Comment get"
+      description: "Comment get"
+      operationId: getComment
+      parameters:
+          - name: commentId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _page
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _limit
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Comment'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+  '/posts':
+    post:
+      tags:
+        - "Posts"
+      summary: "Posts post"
+      description: "Posts post"
+      operationId: newPost
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Post"
+      responses:
+        "200":
+          description: "Risposta di successo"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "500":
+          description: "Errore"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    get:
+      tags:
+        - "Posts"
+      summary: "Posts get"
+      description: "Posts get"
+      operationId: listPosts
+      parameters:
+        - name: title_like
+          in: query
+          content:
+            application/json:
+              schema:
+                type: string
+        - name: _page
+          in: query
+          content:
+            application/json:
+              schema:
+                type: integer
+        - name: _limit
+          in: query
+          content:
+            application/json:
+              schema:
+                type: integer
+
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+  '/posts/{postId}':
+    put:
+      tags:
+        - "Posts"
+      summary: "Post put"
+      description: "Post put"
+      operationId: putPost
+      parameters:
+          - name: postId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    patch:
+      tags:
+        - "Posts"
+      summary: "Post patch"
+      description: "Post patch"
+      operationId: patchPost
+      parameters:
+          - name: postId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    get:
+      tags:
+        - "Posts"
+      summary: "Posts get"
+      description: "Posts get"
+      operationId: getPost
+      parameters:
+          - name: postId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+  '/posts/{postId}/comments':
+    get:
+      tags:
+        - "Comments"
+      summary: "Comments get by PostId "
+      description: "Get Comments by PostId"
+      operationId: getCommentsByPostId
+      parameters:
+          - name: postId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _page
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _limit
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+  '/users':
+    post:
+      tags:
+        - "Users"
+      summary: "Users post"
+      description: "Users post"
+      operationId: newUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    get:
+      tags:
+        - "Users"
+      summary: "Users get"
+      description: "Users get"
+      operationId: listUsers
+      parameters:
+          - name: _page
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _limit
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+  '/users/{userId}':
+    put:
+      tags:
+        - "Users"
+      summary: "User put"
+      description: "User put"
+      operationId: putUser
+      parameters:
+          - name: userId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    patch:
+      tags:
+        - "Users"
+      summary: "User patch"
+      description: "User patch"
+      operationId: patchUser
+      parameters:
+          - name: userId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+    get:
+      tags:
+        - "Users"
+      summary: "User get"
+      description: "User get"
+      operationId: getUser
+      parameters:
+          - name: userId
+            in: path
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _page
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+          - name: _limit
+            in: query
+            content:
+              application/json:
+                schema:
+                  type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Post"
+        "404":
+          description: "Not Found Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+        "500":
+          description: "Error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AppError"
+
+
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        suite:
+          type: string
+        city:
+          type: string
+        zipcode:
+          type: string
+        geo:
+          $ref: '#/components/schemas/Geo'
+    Album:
+      type: object
+      properties:
+        userId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+    Comment:
+      type: object
+      properties:
+        postId:
+          type: integer
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        body:
+          type: string
+    Geo:
+      type: object
+      properties:
+        lat:
+          type: string
+        lng:
+          type: string
+    Post:
+      type: object
+      properties:
+        userId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+        body:
+          type: string
+    Photo:
+      type: object
+      properties:
+        albumId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+        url:
+          type: string
+        thumbnailUrl:
+          type: string
+    Todo:
+      type: object
+      properties:
+        userId:
+          type: integer
+        id:
+          type: integer
+        title:
+          type: string
+        completed:
+          type: boolean
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+    AppError:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+        statusText:
+          type: string

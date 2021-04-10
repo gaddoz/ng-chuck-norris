@@ -16,7 +16,8 @@
     "fix:code": "prettier --write \"src/**/*.{ts,js,html}\"",
     "fix:code:staged": "pretty-quick --staged",
     "fix:prettier:staged": "pretty-quick --staged",
-    "fix:style": "stylelint src/**/*.scss --fix"
+    "fix:style": "stylelint src/**/*.scss --fix",
+    "gen:jsonplapi": "node_modules/.bin/rimraf generated-sources/api/jsonpl/ && npx @openapitools/openapi-generator-cli generate -i api-spec/json-placeholder.yaml -g typescript-angular -o generated-sources/api/jsonpl/"
   },
   "private": true,
   "dependencies": {
