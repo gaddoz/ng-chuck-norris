@@ -1,0 +1,39 @@
+<app-shared-loading-spinner></app-shared-loading-spinner>
+
+<h1>json-placeholder: posts + comments + user</h1>
+<div class="card" *ngFor="let post of data">
+    <div class="card-header">{{post.post.title}}</div>
+    <div class="card-block">
+        <div class="card-text">
+            {{ post.post.body }}
+        </div>
+    </div>
+    <div class="card-footer">
+        <small>
+            <div>user: {{ post.user.name }}</div>
+            <div>
+                <span>comments: {{ post.comments.length}}</span>
+                <button (click)="selectedPost = post; refComments.openModal()">show comments</button>
+            </div>
+        </small>
+    </div>
+</div>
+
+<app-shared-modal [title]="selectedPost?.post.title || ''"
+    [showCancelButton]="false"
+    [showOkButton]="false"
+    #refComments>
+    <div class="body" *ngIf="selectedPost">
+        <p *ngFor="let comment of selectedPost.comments">
+            {{ comment.body}} {{ comment.name }} {{ comment.email }}
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-outline" (click)="refComments.closeModal()">
+            Cancel
+        </button>
+        <button class="btn btn-primary" (click)="refComments.closeModal()">
+            Ok
+        </button>
+    </div>
+</app-shared-modal>

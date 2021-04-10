@@ -19,6 +19,13 @@ const routes: Routes = [
             'src/app/module/main/lazy/chuck-norris/chuck-norris.module'
           ).then((m) => m.ChuckNorrisModule),
       },
+      {
+        path: 'json-placeholder',
+        loadChildren: (): Promise<unknown> =>
+          import(
+            'src/app/module/main/lazy/json-placeholder/json-placeholder.module'
+          ).then((m) => m.JsonPlaceholderModule),
+      },
     ],
   },
 ];
