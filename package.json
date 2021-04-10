@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "yarn run gen:jsonplapi && ng build",
     "build:prod": "ng build --prod --aot --base-href /ng-chuck-norris/ ",
     "test": "ng test",
     "e2e": "ng e2e",
