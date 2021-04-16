@@ -13,14 +13,16 @@
     </div>
     <div class="card-footer">
         <small>
+            <div>{{ post.user?.name }} {{ post.user?.email }}</div>
+            <div>{{ post.user?.address | json}}</div>
             <div>
-                <button (click)="showCommentsPosts(post.id);">show</button>
+                <button class='btn btn-outline' (click)="showCommentsPosts(post);">show comments ({{post?.comments?.length }})</button>
             </div>
         </small>
     </div>
 </div>
 
-<app-shared-modal [title]="''"
+<app-shared-modal [title]="selectedPost?.title || ''"
     [showCancelButton]="false"
     [showOkButton]="false"
     #refComments>
