@@ -1,29 +1,29 @@
 <app-shared-loading-spinner></app-shared-loading-spinner>
 
+<app-sample-form></app-sample-form>
+
 <h1>json-placeholder: posts + comments + user</h1>
-<div class="card" *ngFor="let post of data">
-    <div class="card-header">{{post.post.title}}</div>
+<div class="card" *ngFor="let post of posts$ | async">
+    <div class="card-header">{{post.title}}</div>
     <div class="card-block">
         <div class="card-text">
-            {{ post.post.body }}
+            {{ post.body }}
         </div>
     </div>
     <div class="card-footer">
         <small>
-            <div>user: {{ post.user.name }}</div>
             <div>
-                <span>comments: {{ post.comments.length}}</span>
-                <button (click)="selectedPost = post; refComments.openModal()">show comments</button>
+                <button (click)="showCommentsPosts(post.id);">show</button>
             </div>
         </small>
     </div>
 </div>
 
-<app-shared-modal [title]="selectedPost?.post.title || ''"
+<app-shared-modal [title]="''"
     [showCancelButton]="false"
     [showOkButton]="false"
     #refComments>
-    <div class="body" *ngIf="selectedPost">
+    <div class="body" *ngIf="selectedPost && selectedPost.comments">
         <p *ngFor="let comment of selectedPost.comments">
             {{ comment.body}} {{ comment.name }} {{ comment.email }}
         </p>
