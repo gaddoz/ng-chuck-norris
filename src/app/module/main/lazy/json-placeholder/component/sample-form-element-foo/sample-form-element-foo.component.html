@@ -1,0 +1,32 @@
+<ng-container [formGroup]="form">
+    <clr-select-container class="clr-col-xs-12 clr-col-md-12 clr-col-lg-12">
+        <label>foo email</label>
+        <select clrSelect name="options" formControlName="fooEmail" required>
+            <option value=""></option>
+            <option value="foo">foo</option>
+            <option value="foo@foo.com">foo@foo.com</option>
+        </select>
+        <clr-control-helper>pick a good foo email</clr-control-helper>
+        <clr-control-error *clrIfError="'required'">
+            required error
+        </clr-control-error>
+        <clr-control-error *clrIfError="'email' || 'pattern'">
+            not valid error
+        </clr-control-error>
+    </clr-select-container>
+    <clr-select-container class="clr-col-xs-12 clr-col-md-12 clr-col-lg-12">
+        <label>bar email</label>
+        <select clrSelect name="options" formControlName="barEmail" required>
+            <option value=""></option>
+            <option value="bar">bar</option>
+            <option value="bar@bar.com">bar@bar.com</option>
+        </select>
+        <clr-control-helper>pick a good bar email</clr-control-helper>
+        <clr-control-error *clrIfError="'required'">
+            required error
+        </clr-control-error>
+        <clr-control-error *clrIfError="'email' || 'pattern'">
+            not valid error
+        </clr-control-error>
+    </clr-select-container>
+</ng-container>

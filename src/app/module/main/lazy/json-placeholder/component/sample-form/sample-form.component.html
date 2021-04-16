@@ -1,0 +1,54 @@
+<form class="clr-form clr-form-vertical"
+    [formGroup]="sampleForm"
+    clrForm
+    clrLayout="vertical"
+    [ngStyle]="{ marginBottom: '1.5rem' }"
+    >
+    <div class="clr-form-control-multi clr-row">
+        <clr-input-container class="clr-col-xs-12 clr-col-md-12 clr-col-lg-12">
+            <label translate for="email1" class="clr-control-label">
+                email 1
+            </label>
+            <input class="max-width-aa"
+                clrInput
+                type="text"
+                id="email1"
+                formControlName="email1"
+                required />
+            <clr-control-error *clrIfError="'required'">
+                required error
+            </clr-control-error>
+            <clr-control-error *clrIfError="'email' || 'pattern'">
+                not valid error
+            </clr-control-error>
+        </clr-input-container>
+    </div>
+    <div class="clr-form-control-multi clr-row">
+        <clr-select-container class="clr-col-xs-12 clr-col-md-12 clr-col-lg-12">
+            <label>email2</label>
+            <select clrSelect name="options" formControlName="email2" required>
+                <option value=""></option>
+                <option value="c">c</option>
+                <option value="n">n</option>
+                <option value="cn@cn.io">cn@cn.io</option>
+            </select>
+            <clr-control-helper>pick a good email</clr-control-helper>
+            <clr-control-error *clrIfError="'required'">
+                required error
+            </clr-control-error>
+            <clr-control-error *clrIfError="'email' || 'pattern'">
+                not valid error
+            </clr-control-error>
+        </clr-select-container>
+    </div>
+
+    <div class="clr-form-control-multi clr-row">
+        <app-sample-form-element-foo
+            (formReady)="addChildForm('fooEmails', $event)"
+        ></app-sample-form-element-foo>
+    </div>
+
+    <div>sampleForm.values: {{ sampleForm.value | json }}</div>
+
+    <button (click)='onSubmitForm()'>submit form</button>
+</form>

@@ -8,10 +8,13 @@ import { JsonPlaceholderComponent } from './json-placeholder.component';
 import { JsonPlaceholderRoutingModule } from './json-placeholder-routing.module';
 import { MainComponent } from './view/main/main.component';
 import {  } from 'generated-sources/api/jsonpl/api/comments.service';
-
+import { SampleFormComponent } from './component/sample-form/sample-form.component';
+import { SampleFormElementFooComponent } from './component/sample-form-element-foo/sample-form-element-foo.component';
 @NgModule({
   declarations: [
     JsonPlaceholderComponent,
+    SampleFormComponent,
+    SampleFormElementFooComponent,
     MainComponent,
   ],
   imports: [
