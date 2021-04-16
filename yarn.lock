@@ -1179,10 +1179,10 @@
   resolved "https://registry.yarnpkg.com/@cds/city/-/city-1.1.0.tgz#5b7323750d3d64671ce2e3a804bcf260fbea1154"
   integrity sha512-S9K+Q39BGOghyLHmR0Wdcmu1i1noSUk8HcvMj+3IaohZw02WFd99aPTQDHJeseXrXZP3CNovaSlePI0R11NcFg==
 
-"@cds/core@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@cds/core/-/core-5.0.3.tgz#b91676c91f07faddce708401e3b9a5e99b2aa196"
-  integrity sha512-Kj10s+MpSLpft6J7Pd7sLEzJASI5EUK6U/FAq9Jf3h6b0MuOyUh8cpkTUujwEIlFBnaAh5t5vCRzRNOfk8wp7A==
+"@cds/core@^5.1.0":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@cds/core/-/core-5.1.1.tgz#93b72f023cebe326a9773f4720eb9dd4dc1593c3"
+  integrity sha512-jB+n4lHcd7FOqLwF/IwjeE6PqPVBc42pyo9IikRfPCNMYWngvssn7x5nmfxnd1GN4n8ZcXqx6VSbrkldFUk7xA==
   dependencies:
     "@types/resize-observer-browser" "^0.1.3"
     lit-element "^2.3.1"
@@ -1193,22 +1193,22 @@
     "@cds/city" "^1.1.0"
     normalize.css "^8.0.1"
 
-"@clr/angular@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-5.0.3.tgz#d270935dd7f7c3ab2997be7c1782c0750bcf6f3a"
-  integrity sha512-TvV3rJYB3UUoCzrkmPuvkGTYkp0s3Y+IljxFpFcTmgHhyl7YLOa1wBKMGUS+uCe/R2HdhYZ3kQZyYrig7MeWMA==
+"@clr/angular@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-5.1.1.tgz#e5cff3016d09840fe697070543da35c9d70d258a"
+  integrity sha512-5WbfcoAkJ50W5u89WxI9Fw+5RdJQba2U7HfItDb7YALaCQz07QEH7ioyyJCnwKTbvrjVVP+EwlPU2Ob3hpBxyw==
   dependencies:
     tslib "^2.0.0"
 
-"@clr/icons@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-5.0.3.tgz#58cfbd807b3ac42be6671b3d4bd0a70e6826451f"
-  integrity sha512-XBxI1dRMX9nQJCJ61yS/Z86x0Z7C58q/1mXWCUJMjKbdwb5ZH2YXvMIdQv/8i6hq0vyW+HXDcaEyuAwwDF0ycQ==
+"@clr/icons@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-5.1.1.tgz#296c4ecaee6c0559b6634f0a7400304150c11d70"
+  integrity sha512-PCsRBTyPF5GV/jjcSsq5hXQYYtThDChxGmS5HRpqEUsWuKlhlTy8GTwCk5uf/nx6RoyossMi6kCV8bh8kcUjww==
 
-"@clr/ui@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-5.0.3.tgz#45b8a96a55bfe4303b9bfb19454c41c706c4f17e"
-  integrity sha512-LABEYZCx4bSyqvz/87JLu8iaEazN0ttfyKTJOIeIVC+5bephs9qEI8P8ncW31WGgt2M3OlrjeETkGY4e0O6YBQ==
+"@clr/ui@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-5.1.1.tgz#4a9e3bad06ad26a6a8015096778d9ba666b4fd37"
+  integrity sha512-mGOWBAMGm1M3fgCzH8QiA8dgCtsg3v9q+otAJ00BlZWJpBLP7o/tZA3O07abp5xeuyAYAPBWcZ1gKL/3nXJV9A==
 
 "@eslint/eslintrc@^0.4.0":
   version "0.4.0"
