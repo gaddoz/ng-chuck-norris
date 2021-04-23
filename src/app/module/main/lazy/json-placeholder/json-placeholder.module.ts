@@ -10,12 +10,17 @@ import { MainComponent } from './view/main/main.component';
 import {  } from 'generated-sources/api/jsonpl/api/comments.service';
 import { SampleFormComponent } from './component/sample-form/sample-form.component';
 import { SampleFormElementFooComponent } from './component/sample-form-element-foo/sample-form-element-foo.component';
+import { MapDemoComponent } from './component/map-demo/map-demo.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './view/map/map.component';
 @NgModule({
   declarations: [
     JsonPlaceholderComponent,
     SampleFormComponent,
     SampleFormElementFooComponent,
     MainComponent,
+    MapDemoComponent,
+    MapComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +28,7 @@ import { SampleFormElementFooComponent } from './component/sample-form-element-f
     SharedModule,
     ClarityModule,
     JsonPlaceholderRoutingModule,
+    LeafletModule,
   ],
   providers: [CommentsService, PostsService, UsersService],
 })
