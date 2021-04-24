@@ -41,8 +41,14 @@ export class MapDemoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.map = this.map.clearAllEventListeners();
-    this.map.remove();
+    try {
+      this.map.clearAllEventListeners();
+      this.map.remove();
+    }
+    catch(error){
+      console.log('ngOnDestroy clearAllEventListeners catch error', error);
+      return;
+    }
   }
 
   onMapReady(map: Map) {
