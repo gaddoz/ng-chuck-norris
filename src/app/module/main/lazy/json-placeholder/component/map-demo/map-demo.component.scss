@@ -1,5 +1,8 @@
-.map-container{
-    height:100%;
-    position: relative;
-    width:100%;
+:host {
+    display: grid;
+    grid-gap: .5rem;
+}
+
+.map-container {
+    height: calc(100vh - 8rem);
 }
