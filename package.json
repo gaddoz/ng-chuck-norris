@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "yarn run gen:jsonplapi && ng build",
-    "build:prod": "yarn run gen:jsonplapi && ng build --prod --aot --base-href / ",
+    "build:prod": "yarn run gen:jsonplapi && ng build --prod --aot --base-href /ng-chuck-norris/ ",
     "test": "ng test",
     "e2e": "ng e2e",
     "semantic-release": "semantic-release",
