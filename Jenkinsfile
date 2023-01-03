@@ -16,13 +16,13 @@ pipeline {
 
       stage('Install') {
          steps {
-            sh "npm ci"
+            sh "yarn install --frozen-lockfile"
          }
       }
 
       stage('Build') {
          steps {
-            sh "npm run build"
+            sh "yarn build"
          }
       }
       
