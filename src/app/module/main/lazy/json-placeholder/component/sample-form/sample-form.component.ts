@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sample-form',
@@ -7,13 +7,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sample-form.component.scss']
 })
 export class SampleFormComponent implements OnInit {
-  sampleForm: FormGroup = new FormGroup({
-    email1: new FormControl('', [
+  sampleForm: UntypedFormGroup = new UntypedFormGroup({
+    email1: new UntypedFormControl('', [
       Validators.required,
       Validators.email,
       Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
     ]),
-    email2: new FormControl('', [
+    email2: new UntypedFormControl('', [
       Validators.required,
       Validators.email,
       Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
@@ -25,7 +25,7 @@ export class SampleFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addChildForm(name: string, group: FormGroup) {
+  addChildForm(name: string, group: UntypedFormGroup) {
     this.sampleForm.addControl(name, group);
     console.log('me at addChildForm',group);
   }
