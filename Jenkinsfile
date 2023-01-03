@@ -16,13 +16,13 @@ pipeline {
 
       stage('Install') {
          steps {
-            sh "yarn install --frozen-lockfile"
+            sh "yarn cache clean && yarn install --frozen-lockfile"
          }
       }
 
       stage('Build') {
          steps {
-            sh "yarn cache clean && yarn build"
+            sh "yarn build"
          }
       }
 
