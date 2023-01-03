@@ -7,7 +7,7 @@
     "build": "yarn run gen:jsonplapi && ng build",
     "build:prod": "yarn run gen:jsonplapi && ng build --configuration production --aot --base-href / ",
     "test": "ng test",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --headless --browser chromium",
     "semantic-release": "semantic-release",
     "lint": "yarn run lint:code && yarn run lint:style",
     "lint:code": "ng lint",

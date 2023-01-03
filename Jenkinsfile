@@ -28,7 +28,7 @@ pipeline {
 
       stage('E2E') {
          steps {
-            sh "yarn e2e"
+            sh "export ELECTRON_RUN_AS_NODE=1 && yarn e2e"
          }
       }
       
