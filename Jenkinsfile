@@ -22,8 +22,7 @@ pipeline {
 
       stage('Build') {
          steps {
-            sh "yarn cache clean"
-            sh "yarn build"
+            sh "yarn cache clean && yarn build"
          }
       }
 
