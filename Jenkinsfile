@@ -1,6 +1,12 @@
 pipeline {
 
-   agent any
+   agent {
+      any
+   }
+
+   tools {
+      nodejs "node-14.15"
+   }
 
    stages {
 
