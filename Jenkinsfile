@@ -1,4 +1,7 @@
 pipeline {
+
+   agent any
+
    stages {
 
       stage('SCM Check for changes') {
@@ -18,7 +21,7 @@ pipeline {
             sh "npm run build"
          }
       }
-
+      
    }
    post {
        always {
