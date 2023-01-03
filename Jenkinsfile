@@ -25,6 +25,12 @@ pipeline {
             sh "yarn build"
          }
       }
+
+      stage('E2E') {
+         steps {
+            sh "yarn e2e"
+         }
+      }
       
    }
    post {
