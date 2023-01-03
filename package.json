@@ -17,7 +17,7 @@
     "fix:code:staged": "pretty-quick --staged",
     "fix:prettier:staged": "pretty-quick --staged",
     "fix:style": "stylelint src/**/*.scss --fix",
-    "gen:jsonplapi": "node_modules/.bin/rimraf generated-sources/api/jsonpl/ && npx @openapitools/openapi-generator-cli generate -i api-spec/json-placeholder.yaml -g typescript-angular -o generated-sources/api/jsonpl/"
+    "gen:jsonplapi": "node_modules/.bin/rimraf generated-sources/api/jsonpl/ && npx @openapitools/openapi-generator-cli generate -i api-spec/json-placeholder.yaml -g typescript-angular -o generated-sources/api/jsonpl/ --additional-properties=ngVersion=11.1.2"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +49,7 @@
     "@angular-eslint/template-parser": "1.2.0",
     "@angular/cli": "~11.1.4",
     "@angular/compiler-cli": "~11.1.2",
+    "@briebug/cypress-schematic": "^5.0.1",
     "@openapitools/openapi-generator-cli": "^2.2.1",
     "@semantic-release/git": "^9.0.0",
     "@types/jasmine": "~3.6.0",
@@ -56,6 +57,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
+    "cypress": "latest",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -70,7 +72,6 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
-    "protractor": "~7.0.0",
     "semantic-release": "^17.4.2",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
