@@ -102,11 +102,11 @@
           }
         },
         "e2e": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "ng-chuck-norris:serve",
             "watch": false,
-            "headless": true
+            "headless": false
           },
           "configurations": {
             "production": {
@@ -115,7 +115,7 @@
           }
         },
         "cypress-run": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "ng-chuck-norris:serve"
           },
@@ -126,15 +126,23 @@
           }
         },
         "cypress-open": {
-          "builder": "@briebug/cypress-schematic:cypress",
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": true
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "ng-chuck-norris:serve",
             "watch": true,
-            "headless": false
+            "headless": false,
+            "testingType": "component"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "ng-chuck-norris:serve:production"
+            "development": {
+              "devServerTarget": "ng-chuck-norris:serve:development"
             }
           }
         }

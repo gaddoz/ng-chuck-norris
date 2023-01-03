@@ -32,6 +32,7 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -46,3 +47,7 @@ testem.log
 Thumbs.db
 generated-sources/api/jsonpl/*
 openapitools.json
+
+# cypress
+cypress/screenshots
+cypress/videos
