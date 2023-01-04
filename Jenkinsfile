@@ -28,7 +28,8 @@ pipeline {
 
       stage('E2E') {
          steps {
-            sh "export ELECTRON_RUN_AS_NODE=1 && yarn e2e"
+            sh 'yarn start & npx wait-on http://localhost:4200'
+            sh "CYPRESS_API_URL=\"http://ciccio1234/\" npx cy2 run --record --key ng-chuck-norris --parallel --ci-build-id env.BUILD_ID"
          }
       }
       

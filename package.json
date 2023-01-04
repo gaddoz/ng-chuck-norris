@@ -19,7 +19,8 @@
     "fix:style": "stylelint src/**/*.scss --fix",
     "gen:jsonplapi": "node_modules/.bin/rimraf generated-sources/api/jsonpl/ && npx @openapitools/openapi-generator-cli generate -i api-spec/json-placeholder.yaml -g typescript-angular -o generated-sources/api/jsonpl/ --additional-properties=ngVersion=14.2.12",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "sorry:cypress": "CYPRESS_API_URL=http://ciccio:1234/ cy2 run --record --key localdevid --parallel --ci-build-id `date +%s` "
   },
   "private": true,
   "dependencies": {
@@ -59,7 +60,8 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
-    "cypress": "latest",
+    "cy2": "3.4.1",
+    "cypress": "12.0.1",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
